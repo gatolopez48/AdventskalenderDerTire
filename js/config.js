@@ -7,17 +7,17 @@ export const calendarConfig = [
     {
         "day": 1,
         "image": "img/1792126901271.jpg",
-        "title": "Titel 1"
+        "title": "Die Schwabe"
     },
     {
         "day": 2,
         "image": "img/1792131738217.jpg",
-        "title": "Titel 2"
+        "title": "Das Bildschwein"
     },
     {
         "day": 3,
-        "image": "img/bild3.jpg",
-        "title": "Titel 3"
+        "image": "img/1792181016164.jpg",
+        "title": "Die Tornisse"
     },
     {
         "day": 4,
