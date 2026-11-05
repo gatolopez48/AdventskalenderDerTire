@@ -12,12 +12,10 @@ export function initModal() {
     const modal = document.getElementById('image-modal');
     const closeBtn = document.querySelector('.close-btn');
 
-    // Schließen über den Button
     closeBtn.addEventListener('click', () => {
         modal.classList.add('hidden');
     });
 
-    // Schließen durch Klick auf den Hintergrund
     modal.addEventListener('click', (e) => {
         if (e.target === modal) modal.classList.add('hidden');
     });
