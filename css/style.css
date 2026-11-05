@@ -1,105 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
 :root {
-    --bg-color: #f4f4f9;
-    --door-opened: #9e9e9e; /* Grau (geöffnet) */
-    --door-today: #4caf50;  /* Grün (Heute) */
-    --door-future: #f44336; /* Rot (Zukunft) */
-    --door-past: #2196f3;   /* Blau (Vergangenheit) */
+    /* Elegante, winterliche Farbverläufe anstatt greller Standardfarben */
+    --door-future: linear-gradient(135deg, #fb7185, #e11d48); /* Sanftes, sattes Rot */
+    --door-past: linear-gradient(135deg, #60a5fa, #2563eb);   /* Modernes Blau */
+    --door-today: linear-gradient(135deg, #34d399, #059669);  /* Lebendiges Smaragdgrün */
+    
+    --bg-color: #f8fafc;
     --text-color: #ffffff;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
+    /* Dezentes Hintergrundmuster (Polka Dots) für etwas mehr Struktur */
+    background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    color: #1e293b;
     text-align: center;
     margin: 0;
     padding: 20px;
 }
 
+h1 {
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+}
+
 /* Kalender Grid */
 .calendar-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
+    /* Etwas größere Minimalbreite für schönere Proportionen */
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 20px;
     max-width: 900px;
-    margin: 40px auto;
+    margin: 30px auto;
 }
 
 /* Basis Türchen Design */
 .door {
     color: var(--text-color);
-    height: 120px;
+    height: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 38px;
+    font-weight: 800;
     cursor: pointer;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s, filter 0.3s;
+    border-radius: 16px; /* Deutlich runder */
+    /* Plastischer Schatten und ein leichter weißer Rand für einen 3D-Glas-Effekt */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Hover-Effekt für klickbare Türchen */
-.door:not(.future):hover {
-    transform: scale(1.05);
-    filter: brightness(1.15);
+.door:not(.future):not(.opened):hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    filter: brightness(1.1);
 }
 
 /* --- Farb-Zustände --- */
 
 /* Zukunft (Rot) */
 .door.future {
-    background-color: var(--door-future);
+    background: var(--door-future);
     cursor: not-allowed;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 /* Vergangenheit (Blau - noch nicht angeklickt) */
 .door.past {
-    background-color: var(--door-past);
+    background: var(--door-past);
 }
 
 /* Heute (Grün) */
 .door.today {
-    background-color: var(--door-today);
-    box-shadow: 0 0 15px var(--door-today); /* Leuchtender Effekt für den heutigen Tag */
+    background: var(--door-today);
+    /* Zusätzlicher Leuchteffekt für den heutigen Tag */
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.6);
 }
 
 /* Geöffnet (Grau) */
 .door.opened {
-    background-color: var(--door-opened);
-    opacity: 0.6;
-    border: 2px dashed #555;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
-    transform: scale(0.98); /* Wirkt leicht eingedrückt */
+    background: #e2e8f0;
+    color: #94a3b8; /* Graue Schrift statt weiß */
+    text-shadow: none;
+    border: 2px dashed #cbd5e1;
+    box-shadow: inset 0 4px 6px rgba(0,0,0,0.05);
+    transform: scale(0.97);
 }
+
 .door.opened:hover {
-    transform: scale(1);
+    transform: scale(0.97);
+    background: #e9ecef;
 }
 
 /* Modal (Vollbild) */
 .modal {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.92);
+    background-color: rgba(15, 23, 42, 0.95); /* Dunkleres, kühleres Overlay */
+    backdrop-filter: blur(5px); /* Verschwommener Hintergrund */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 1000;
     color: white;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .modal.hidden {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .modal img {
     max-width: 90%;
     max-height: 75vh;
-    border: 4px solid white;
-    border-radius: 4px;
-    margin-top: 15px;
+    border: 4px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .close-btn {
@@ -108,6 +144,11 @@ body {
     right: 40px;
     font-size: 50px;
     cursor: pointer;
+    color: rgba(255,255,255,0.7);
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
     color: white;
 }
 
@@ -116,6 +157,10 @@ body {
     max-width: 600px;
     margin: 0 auto 20px;
     text-align: left;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 .config-row {
     display: flex;
@@ -124,16 +169,29 @@ body {
 }
 .config-row input {
     flex: 1;
-    padding: 5px;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
 }
 .btn {
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: var(--door-past);
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 textarea {
     width: 100%;
     max-width: 600px;
     margin-top: 20px;
+    padding: 15px;
     font-family: monospace;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    box-sizing: border-box;
 }
