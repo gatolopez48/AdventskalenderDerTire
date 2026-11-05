@@ -1,8 +1,9 @@
 :root {
     --bg-color: #f4f4f9;
-    --door-color: #d32f2f;
-    --door-hover: #b71c1c;
-    --door-opened: #37474f;
+    --door-opened: #9e9e9e; /* Grau (geöffnet) */
+    --door-today: #4caf50;  /* Grün (Heute) */
+    --door-future: #f44336; /* Rot (Zukunft) */
+    --door-past: #2196f3;   /* Blau (Vergangenheit) */
     --text-color: #ffffff;
 }
 
@@ -14,6 +15,7 @@ body {
     padding: 20px;
 }
 
+/* Kalender Grid */
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -22,8 +24,8 @@ body {
     margin: 40px auto;
 }
 
+/* Basis Türchen Design */
 .door {
-    background-color: var(--door-color);
     color: var(--text-color);
     height: 120px;
     display: flex;
@@ -34,21 +36,48 @@ body {
     cursor: pointer;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s, background-color 0.3s;
+    transition: transform 0.2s, filter 0.3s;
 }
 
-.door:hover {
+/* Hover-Effekt für klickbare Türchen */
+.door:not(.future):hover {
     transform: scale(1.05);
-    background-color: var(--door-hover);
+    filter: brightness(1.15);
 }
 
+/* --- Farb-Zustände --- */
+
+/* Zukunft (Rot) */
+.door.future {
+    background-color: var(--door-future);
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Vergangenheit (Blau - noch nicht angeklickt) */
+.door.past {
+    background-color: var(--door-past);
+}
+
+/* Heute (Grün) */
+.door.today {
+    background-color: var(--door-today);
+    box-shadow: 0 0 15px var(--door-today); /* Leuchtender Effekt für den heutigen Tag */
+}
+
+/* Geöffnet (Grau) */
 .door.opened {
     background-color: var(--door-opened);
-    opacity: 0.7;
-    border: 2px dashed #90a4ae;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    opacity: 0.6;
+    border: 2px dashed #555;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+    transform: scale(0.98); /* Wirkt leicht eingedrückt */
+}
+.door.opened:hover {
+    transform: scale(1);
 }
 
+/* Modal (Vollbild) */
 .modal {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -82,6 +111,7 @@ body {
     color: white;
 }
 
+/* Config Seite Basics */
 .config-form {
     max-width: 600px;
     margin: 0 auto 20px;
