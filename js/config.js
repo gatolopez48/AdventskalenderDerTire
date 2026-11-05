@@ -1,3 +1,8 @@
+export const calendarSettings = {
+    year: 2026,
+    month: 11 // 11 = November, 12 = Dezember
+};
+
 export const calendarConfig = [
     {
         "day": 1,
@@ -120,3 +125,4 @@ export const calendarConfig = [
         "title": "Titel 24"
     }
 ];
+            
