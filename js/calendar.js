@@ -6,7 +6,7 @@ export function initCalendar(config, settings) {
     const testMode = false;
     
     // Aktuelles Datum holen und die Uhrzeit auf 00:00 setzen,
-    // damit wir saubere Tages-Vergleiche machen können (ohne Stunden/Minuten).
+    // damit wir saubere Tages-Vergleiche machen können.
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -19,11 +19,11 @@ export function initCalendar(config, settings) {
         const storageKey = `door_${settings.year}_${settings.month}_${item.day}`;
         const isOpened = localStorage.getItem(storageKey) === 'true';
         
-        // Zieldatum des Türchens berechnen (Monat ist in JavaScript 0-basiert)
+        // Zieldatum des Türchens berechnen (Monat ist 0-basiert)
         const doorDate = new Date(settings.year, settings.month - 1, item.day);
         doorDate.setHours(0, 0, 0, 0);
 
-        // Initiale Farbe (CSS Klasse) basierend auf Datum und Status setzen
+        // Initiale Farbe basierend auf Datum und Status setzen
         if (isOpened) {
             door.classList.add('opened');
         } else if (doorDate > today) {
@@ -31,27 +31,19 @@ export function initCalendar(config, settings) {
         } else if (doorDate < today) {
             door.classList.add('past');
         } else {
-            // doorDate stimmt exakt mit today überein
             door.classList.add('today');
         }
 
         door.addEventListener('click', () => {
             const canOpen = testMode || (today >= doorDate);
 
+            // Es passiert nur noch etwas, wenn das Türchen geöffnet werden darf
             if (canOpen) {
-                // Wenn wir es öffnen, entfernen wir die vorherigen Farben
                 door.classList.remove('past', 'today');
-                // und setzen es auf grau (geöffnet)
                 door.classList.add('opened');
                 
-                // Status speichern
                 localStorage.setItem(storageKey, 'true');
-                
-                // Bild anzeigen
                 openModal(item.image, item.title);
-            } else {
-                const monthName = doorDate.toLocaleString('de-DE', { month: 'long' });
-                alert(`Dieses Türchen lässt sich erst am ${item.day}. ${monthName} öffnen!`);
             }
         });
 
