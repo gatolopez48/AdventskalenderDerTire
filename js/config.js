@@ -57,12 +57,12 @@ export const calendarConfig = [
     {
         "day": 11,
         "image": "img/1792262374047.jpg",
-        "title": "Titel 11"
+        "title": "Die Lespe"
     },
     {
         "day": 12,
         "image": "img/1792264055337.jpg",
-        "title": "Die Lespe"
+        "title": "Der Piratha"
     },
     {
         "day": 13,
@@ -88,12 +88,12 @@ export const calendarConfig = [
     {
         "day": 17,
         "image": "img/1793132856311.jpg",
-        "title": "Titel 17"
+        "title": "Der SkorBion"
     },
     {
         "day": 18,
-        "image": "img/1793132976045.jpg",
-        "title": "Der SkorBion"
+        "image": "img/1793132976.jpg",
+        "title": "Titel 18"
     },
     
     {
