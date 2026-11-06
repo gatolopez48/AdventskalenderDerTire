@@ -3,22 +3,26 @@ export function openModal(imageSrc, titleText) {
     const img = document.getElementById('modal-image');
     const title = document.getElementById('modal-title');
 
-    // 1. Animation temporär komplett deaktivieren
+    // 1. Animationen temporär komplett deaktivieren
     img.style.transition = 'none';
+    title.style.transition = 'none';
     
-    // 2. Das (alte) Bild sofort und hart unsichtbar machen
+    // 2. Bild UND Titel sofort hart unsichtbar machen
     img.style.opacity = '0';
+    title.style.opacity = '0';
     
-    // 3. Reflow erzwingen: Zwingt den Browser, das Unsichtbar-Machen SOFORT 
-    // anzuwenden, bevor der nächste Code-Block ausgeführt wird.
+    // 3. Reflow erzwingen (zwingt den Browser zur sofortigen Umsetzung)
     void img.offsetWidth; 
+    void title.offsetWidth;
 
-    // 4. Animation für das spätere Einblenden wieder aktivieren
+    // 4. Animationen für das spätere Einblenden wieder aktivieren
     img.style.transition = 'opacity 0.4s ease';
+    title.style.transition = 'opacity 0.4s ease';
 
-    // 5. Erst wenn das neue Bild geladen ist, wird es sanft eingeblendet
+    // 5. Erst wenn das neue Bild geladen ist, werden Bild UND Titel sanft eingeblendet
     img.onload = () => {
         img.style.opacity = '1';
+        title.style.opacity = '1';
     };
 
     // 6. Neue Daten zuweisen
@@ -32,15 +36,17 @@ export function openModal(imageSrc, titleText) {
 export function initModal() {
     const modal = document.getElementById('image-modal');
     const img = document.getElementById('modal-image');
+    const title = document.getElementById('modal-title');
     const closeBtn = document.querySelector('.close-btn');
 
     // Hilfsfunktion zum Schließen
     const closeModal = () => {
         modal.classList.add('hidden');
         
-        // Löscht das alte Bild physisch, sobald das Modal zu ist (nach der 0.3s CSS Animation)
+        // Löscht das alte Bild und den Titel physisch, sobald das Modal zu ist
         setTimeout(() => {
             img.src = '';
+            title.textContent = '';
         }, 300);
     };
 
