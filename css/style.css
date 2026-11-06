@@ -33,9 +33,9 @@ body {
 
 h1 {
     font-family: 'Mountains of Christmas', cursive;
-    font-size: 3.8rem;
+    font-size: 3.5rem;
     color: var(--gold);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     letter-spacing: 2px;
     text-shadow: 0 0 15px rgba(244, 208, 63, 0.4), 2px 4px 4px rgba(0,0,0,0.6);
 }
