@@ -3,32 +3,45 @@ export function openModal(imageSrc, titleText) {
     const img = document.getElementById('modal-image');
     const title = document.getElementById('modal-title');
 
-    // 1. Bild sofort unsichtbar machen, um den "Blitzer" des alten Bildes zu verhindern
+    // 1. Animation temporär komplett deaktivieren
+    img.style.transition = 'none';
+    
+    // 2. Das (alte) Bild sofort und hart unsichtbar machen
     img.style.opacity = '0';
     
-    // Weicher Fade-In Effekt
+    // 3. Reflow erzwingen: Zwingt den Browser, das Unsichtbar-Machen SOFORT 
+    // anzuwenden, bevor der nächste Code-Block ausgeführt wird.
+    void img.offsetWidth; 
+
+    // 4. Animation für das spätere Einblenden wieder aktivieren
     img.style.transition = 'opacity 0.4s ease';
 
-    // 2. Event-Listener: Erst wenn das NEUE Bild komplett geladen ist, wird es sichtbar
+    // 5. Erst wenn das neue Bild geladen ist, wird es sanft eingeblendet
     img.onload = () => {
         img.style.opacity = '1';
     };
 
-    // 3. Neue Daten zuweisen
+    // 6. Neue Daten zuweisen
     img.src = imageSrc;
     title.textContent = titleText;
     
-    // 4. Modal öffnen (das Bild blendet sich dann automatisch ein, sobald es bereit ist)
+    // 7. Modal öffnen
     modal.classList.remove('hidden');
 }
 
 export function initModal() {
     const modal = document.getElementById('image-modal');
+    const img = document.getElementById('modal-image');
     const closeBtn = document.querySelector('.close-btn');
 
     // Hilfsfunktion zum Schließen
     const closeModal = () => {
         modal.classList.add('hidden');
+        
+        // Löscht das alte Bild physisch, sobald das Modal zu ist (nach der 0.3s CSS Animation)
+        setTimeout(() => {
+            img.src = '';
+        }, 300);
     };
 
     closeBtn.addEventListener('click', closeModal);
