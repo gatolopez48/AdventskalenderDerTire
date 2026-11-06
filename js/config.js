@@ -103,12 +103,12 @@ export const calendarConfig = [
     },
     {
         "day": 20,
-        "image": "1793567240036.jpg",
+        "image": "img/1793567240036.jpg",
         "title": "Der Stachelrocken"
     },
     {
         "day": 21,
-        "image": "1793428997252.jpg",
+        "image": "img/1793428997252.jpg",
         "title": "Der Woll"
     },
     {
