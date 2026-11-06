@@ -79,10 +79,11 @@ export const calendarConfig = [
         "image": "img/1793132357518.jpg",
         "title": "Die Pummel"
     },
+    
     {
-        "day": 19,
-        "image": "img/1793132424952.jpg",
-        "title": "Der Wischbär"
+        "day": 16,
+        "image": "img/1793132976045.jpg",
+        "title": "Der Schwerfisch"
     },
     {
         "day": 17,
@@ -94,15 +95,21 @@ export const calendarConfig = [
         "image": "img/1793132976045.jpg",
         "title": "Der SkorBion"
     },
+    
     {
-        "day": 21,
-        "image": "1793428997252.jpg",
-        "title": "Der Woll"
+        "day": 19,
+        "image": "img/1793132424952.jpg",
+        "title": "Der Wischbär"
     },
     {
         "day": 20,
         "image": "1793567240036.jpg",
         "title": "Der Stachelrocken"
+    },
+    {
+        "day": 21,
+        "image": "1793428997252.jpg",
+        "title": "Der Woll"
     },
     {
         "day": 22,
@@ -118,11 +125,6 @@ export const calendarConfig = [
         "day": 24,
         "image": "img/1793879620143.jpg",
         "title": "Die Singuine"
-    },
-    {
-        "day": 16,
-        "image": "img/1793132976045.jpg",
-        "title": "Der Schwerfisch"
     }
 ];
             
