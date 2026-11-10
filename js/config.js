@@ -4,127 +4,27 @@ export const calendarSettings = {
 };
 
 export const calendarConfig = [
-    {
-        "day": 1,
-        "image": "img/1792126901271.jpg",
-        "title": "Die Schwabe"
-    },
-    {
-        "day": 2,
-        "image": "img/1792131738217.jpg",
-        "title": "Das Bildschwein"
-    },
-    {
-        "day": 3,
-        "image": "img/1792181016164.jpg",
-        "title": "Die Tornisse"
-    },
-    {
-        "day": 4,
-        "image": "img/1792181896384.jpg",
-        "title": "Der Rotweiler"
-    },
-    {
-        "day": 5,
-        "image": "img/1792181974803.jpg",
-        "title": "Der Maulwuff"
-    },
-    {
-        "day": 6,
-        "image": "img/1792214668658.jpg",
-        "title": "Der Mooskito"
-    },
-    {
-        "day": 7,
-        "image": "img/1792223420954.jpg",
-        "title": "Die Taran Tell"
-    },
-    {
-        "day": 8,
-        "image": "img/1792224152233.jpg",
-        "title": "Der Radler"
-    },
-    {
-        "day": 9,
-        "image": "img/1792261754291.jpg",
-        "title": "Das Falltier"
-    },
-    {
-        "day": 10,
-        "image": "img/1792261965711.jpg",
-        "title": "Der Silberreiter"
-    },
-    {
-        "day": 11,
-        "image": "img/1792262374047.jpg",
-        "title": "Die Lespe"
-    },
-    {
-        "day": 12,
-        "image": "img/1792264055337.jpg",
-        "title": "Der Piratha"
-    },
-    {
-        "day": 13,
-        "image": "img/1792264824222.jpg",
-        "title": "Der All In Gator"
-    },
-    {
-        "day": 14,
-        "image": "img/1792266124416.jpg",
-        "title": "Das Fettchen"
-    },
-    {
-        "day": 15,
-        "image": "img/1793132357518.jpg",
-        "title": "Die Pummel"
-    },
-    
-    {
-        "day": 16,
-        "image": "img/1793132976045.jpg",
-        "title": "Der Schwerfisch"
-    },
-    {
-        "day": 17,
-        "image": "img/1793132856311.jpg",
-        "title": "Der SkorBion"
-    },
-    {
-        "day": 18,
-        "image": "img/1793132976.jpg",
-        "title": "Titel 18"
-    },
-    
-    {
-        "day": 19,
-        "image": "img/1793132424952.jpg",
-        "title": "Der Wischbär"
-    },
-    {
-        "day": 20,
-        "image": "img/1793567240036.jpg",
-        "title": "Der Stachelrocken"
-    },
-    {
-        "day": 21,
-        "image": "img/1793428997252.jpg",
-        "title": "Der Woll"
-    },
-    {
-        "day": 22,
-        "image": "img/1793879413223.jpg",
-        "title": "Der Es! Bär"
-    },
-    {
-        "day": 23,
-        "image": "img/1793879551101.jpg",
-        "title": "Die Schneecke"
-    },
-    {
-        "day": 24,
-        "image": "img/1793879620143.jpg",
-        "title": "Die Singuine"
-    }
-];
-            
+    { "day": 1, "image": "img/CoalaBaer.jpg", "title": "Der Colabär" },
+    { "day": 2, "image": "img/dach.jpg", "title": "Der Dach" },
+    { "day": 3, "image": "img/Bildschwein.jpg", "title": "Das Bildschwein" },
+    { "day": 4, "image": "img/EsBaer.jpg", "title": "Der Es! Bär" },
+    { "day": 5, "image": "img/Piratha.jpg", "title": "Der Piratha" },
+    { "day": 6, "image": "img/nikomaus.jpg", "title": "Die Nikomaus" },
+    { "day": 7, "image": "img/Lespen.jpg", "title": "Die Lespe" },
+    { "day": 8, "image": "img/Kaminchen.jpg", "title": "Das Kaminchen" },
+    { "day": 9, "image": "img/Schwabe.jpg", "title": "Die Schwabe" },
+    { "day": 10, "image": "img/Maulwurf.jpg", "title": "Der Maulwuff" },
+    { "day": 11, "image": "img/Rotweiler.jpg", "title": "Der Rotweiler" },
+    { "day": 12, "image": "img/Reichhoernchen.jpg", "title": "Das Reichhörnchen" },
+    { "day": 13, "image": "img/Elsta.jpg", "title": "Elsta" },
+    { "day": 14, "image": "img/Schneecke.jpg", "title": "Die Schneecke" },
+    { "day": 15, "image": "img/Schwerfisch.jpg", "title": "Der Schwerfisch" },
+    { "day": 16, "image": "img/StachelRocken.jpg", "title": "Der Stachelrocken" },
+    { "day": 17, "image": "img/Wischbaer.jpg", "title": "Der Wischbär" },
+    { "day": 18, "image": "img/Fettchen.jpg", "title": "Das Fettchen" },
+    { "day": 19, "image": "img/HarryOtter.jpg", "title": "Harry Otter" },
+    { "day": 20, "image": "img/Herdmaennchen.jpg", "title": "Das Herdmännchen" },
+    { "day": 21, "image": "img/Woll.jpg", "title": "Der Woll" },
+    { "day": 22, "image": "img/Singuine.jpg", "title": "Die Singuine" },
+    { "day": 23, "image": "img/SantaLaus.jpg", "title": "Santa Laus" },
+    { "day": 24, "image": "img/christrind.jpg", "title": "Das Christrind" } ];
