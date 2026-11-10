@@ -1,3 +1,8 @@
+export const calendarSettings = {
+    year: 2026,
+    month: 10 // 11 = November, 12 = Dezember
+};
+
 export const calendarConfig = [
     { "day": 1, "image": "img/CoalaBaer.jpg", "title": "Der Colabär" },
     { "day": 2, "image": "img/dach.jpg", "title": "Der Dach" },
