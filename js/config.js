@@ -4,7 +4,7 @@ export const calendarSettings = {
 };
 
 export const calendarConfig = [
-    { "day": 1, "image": "img/CoalaBaer.jpg", "title": "Der Colabär" },
+    { "day": 1, "image": "img/CoalaBaer.jpg", "title": "Der Kolabär" },
     { "day": 2, "image": "img/dach.jpg", "title": "Der Dach" },
     { "day": 3, "image": "img/Bildschwein.jpg", "title": "Das Bildschwein" },
     { "day": 4, "image": "img/EsBaer.jpg", "title": "Der Es! Bär" },
